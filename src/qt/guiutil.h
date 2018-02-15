@@ -8,6 +8,7 @@
 #include "amount.h"
 #include "fs.h"
 
+#include <QDir>
 #include <QEvent>
 #include <QHeaderView>
 #include <QMessageBox>
@@ -99,6 +100,9 @@ namespace GUIUtil
     QString getOpenFileName(QWidget *parent, const QString &caption, const QString &dir,
         const QString &filter,
         QString *selectedSuffixOut);
+
+    // Get theme directory
+    QDir getThemeDir();
 
     /** Get connection type to call object slot in GUI thread with invokeMethod. The call will be blocking.
 

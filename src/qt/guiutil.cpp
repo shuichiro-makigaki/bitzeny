@@ -10,6 +10,7 @@
 #include "walletmodel.h"
 
 #include "fs.h"
+#include "guiconstants.h"
 #include "primitives/transaction.h"
 #include "init.h"
 #include "policy/policy.h"
@@ -376,6 +377,18 @@ QString getOpenFileName(QWidget *parent, const QString &caption, const QString &
         *selectedSuffixOut = selectedSuffix;
     }
     return result;
+}
+
+QDir getThemeDir()
+{
+    QDir themeDir(QString::fromStdString(gArgs.GetArg("-themedir", "")));
+    if (!themeDir.isAbsolute())
+    {
+    	    QString dataDir = QString::fromStdString(GetDataDir().string());
+    	    QString defaultDir = QString::fromStdString(std::string(DEFAULT_THEME_DIR));
+    	    themeDir = QDir(dataDir + "/" + defaultDir + "/" + themeDir.path());
+    }
+    return themeDir;
 }
 
 Qt::ConnectionType blockingGUIThreadConnection()

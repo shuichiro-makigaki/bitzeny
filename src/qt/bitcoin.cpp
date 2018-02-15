@@ -226,6 +226,8 @@ public:
     void createWindow(const NetworkStyle *networkStyle);
     /// Create splash screen
     void createSplashScreen(const NetworkStyle *networkStyle);
+    /// Set Stylesheet
+    void setWindowStyle();
 
     /// Request core initialization
     void requestInitialize();
@@ -409,6 +411,22 @@ void BitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
     splash->show();
     connect(this, SIGNAL(splashFinished(QWidget*)), splash, SLOT(slotFinish(QWidget*)));
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
+}
+
+void BitcoinApplication::setWindowStyle()
+{
+	QDir themeDir = GUIUtil::getThemeDir();
+	QFile themeFile(themeDir.filePath(DEFAULT_THEME_FILENAME));
+	if (!themeFile.open(QFile::ReadOnly))
+    {
+    		qWarning() << "Can not read style file: " << themeFile.fileName();
+    	    return;
+    }
+	QString styleString(themeFile.readAll());
+	qDebug() << "Loaded style sheet: " << styleString;
+	styleString.replace(QString("%themedir%"), themeDir.path());
+	qDebug() << "Compiled style sheet: " << styleString;
+    setStyleSheet(styleString);
 }
 
 void BitcoinApplication::startThread()
@@ -704,6 +722,9 @@ int main(int argc, char *argv[])
 
     if (gArgs.GetBoolArg("-splash", DEFAULT_SPLASHSCREEN) && !gArgs.GetBoolArg("-min", false))
         app.createSplashScreen(networkStyle.data());
+
+    if (gArgs.IsArgSet("-themedir"))
+    	    app.setWindowStyle();
 
     int rv = EXIT_SUCCESS;
     try

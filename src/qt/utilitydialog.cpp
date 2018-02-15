@@ -89,6 +89,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
         strUsage += HelpMessageOpt("-rootcertificates=<file>", tr("Set SSL root certificates for payment request (default: -system-)").toStdString());
         strUsage += HelpMessageOpt("-splash", strprintf(tr("Show splash screen on startup (default: %u)").toStdString(), DEFAULT_SPLASHSCREEN));
         strUsage += HelpMessageOpt("-resetguisettings", tr("Reset all settings changed in the GUI").toStdString());
+        strUsage += HelpMessageOpt("-themedir", strprintf(tr("Directory to load window theme (default: <DataDir>/%u)").toStdString(), DEFAULT_THEME_DIR));
         if (showDebug) {
             strUsage += HelpMessageOpt("-uiplatform", strprintf("Select platform to customize UI for (one of windows, macosx, other; default: %s)", BitcoinGUI::DEFAULT_UIPLATFORM));
         }

@@ -15,6 +15,8 @@ static const int MAX_PASSPHRASE_SIZE = 1024;
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
+static const char * const DEFAULT_THEME_DIR = "themes";
+static const char * const DEFAULT_THEME_FILENAME = "main.qss";
 
 /* Invalid field background style */
 #define STYLE_INVALID "background:#FF8080"
