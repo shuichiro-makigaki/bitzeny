@@ -269,16 +269,16 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha256.h \
   crypto/sha512.cpp \
   crypto/sha512.h \
-  crypto/yespower-0.5/yespower.c
+  crypto/yespower/yespower.c
 
 noinst_HEADERS = \
-  crypto/yespower-0.5/sha256.c \
-  crypto/yespower-0.5/sha256.h \
-  crypto/yespower-0.5/sysendian.h \
-  crypto/yespower-0.5/yespower-opt.c \
-  crypto/yespower-0.5/yespower-platform.c \
-  crypto/yespower-0.5/yespower-ref.c \
-  crypto/yespower-0.5/yespower.h
+  crypto/yespower/sha256.c \
+  crypto/yespower/sha256.h \
+  crypto/yespower/sysendian.h \
+  crypto/yespower/yespower-opt.c \
+  crypto/yespower/yespower-platform.c \
+  crypto/yespower/yespower-ref.c \
+  crypto/yespower/yespower.h
 
 if EXPERIMENTAL_ASM
 crypto_libbitcoin_crypto_a_SOURCES += crypto/sha256_sse4.cpp
