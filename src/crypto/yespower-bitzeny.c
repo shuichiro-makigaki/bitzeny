@@ -29,6 +29,7 @@
  * online backup system.
  */
 
+#include "yespower/insecure_memzero.h"
 #include "yespower/sha256.c"
 #include "yespower/sha256.h"
 #include "yespower/yespower.h"
