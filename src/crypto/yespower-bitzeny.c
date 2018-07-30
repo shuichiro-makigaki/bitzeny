@@ -34,10 +34,15 @@
 #include "yespower/yespower.h"
 #include "yespower/yespower-opt.c"
 
-static const yespower_params_t yespower_bitzeny = {YESPOWER_0_5, 2048, 8, "Client Key", 10};
+static const yespower_params_t yespower_0_5_bitzeny = {YESPOWER_0_5, 2048, 8, "Client Key", 10};
 
+// WARNING DO NOT USE THIS IN yespower_hash YET. For later HF to yespower 1.0
+// TODO Find HF solution using unixtime
+static const yespower_params_t yespower_1_0_bitzeny = {YESPOWER_1_0, 2048, 8, "Client Key", 10};
+
+// yespower 0.5 only
 void yespower_hash(const char *input, char *output){
-    if (yespower_tls(input, 80, &yespower_bitzeny, (yespower_binary_t *) output) == 0){
+    if (yespower_tls(input, 80, &yespower_0_5_bitzeny, (yespower_binary_t *) output) == 0){
         return;
     }
     abort();
