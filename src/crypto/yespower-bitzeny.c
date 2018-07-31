@@ -26,11 +26,8 @@
  * This file was originally written by bitzenyPlus Developers as part of the bitzenyPlus.
  */
 
-#include "yespower/insecure_memzero.h"
-#include "yespower/sha256.c"
-#include "yespower/sha256.h"
+#include <stdlib.h>
 #include "yespower/yespower.h"
-#include "yespower/yespower-opt.c"
 
 static const yespower_params_t yespower_0_5_bitzeny = {YESPOWER_0_5, 2048, 8, "Client Key", 10};
 
@@ -42,5 +39,5 @@ static const yespower_params_t yespower_1_0_bitzeny = {YESPOWER_1_0, 2048, 8, NU
 // yespower 0.5 only
 void yespower_hash(const char *input, char *output){
   if (yespower_tls(input, 80, &yespower_0_5_bitzeny, (yespower_binary_t *) output))
-  abort();
+      abort();
 }
