@@ -1,6 +1,4 @@
 /*-
- * Copyright 2009 Colin Percival
- * Copyright 2013-2018 Alexander Peslyak
  * Copyright 2018 bitzenyPlus Developers
  * All rights reserved.
  *
@@ -25,8 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * This file was originally written by Colin Percival as part of the Tarsnap
- * online backup system.
+ * This file was originally written by bitzenyPlus Developers as part of the bitzenyPlus.
  */
 
 #include "yespower/insecure_memzero.h"
@@ -39,12 +36,11 @@ static const yespower_params_t yespower_0_5_bitzeny = {YESPOWER_0_5, 2048, 8, "C
 
 // WARNING DO NOT USE THIS IN yespower_hash YET. For later HF to yespower 1.0
 // TODO Find HF solution using unixtime
-static const yespower_params_t yespower_1_0_bitzeny = {YESPOWER_1_0, 2048, 8, "Client Key", 10};
+// For 1.0 personalization string is not required. you can set its pointer to NULL and its length to 0.
+static const yespower_params_t yespower_1_0_bitzeny = {YESPOWER_1_0, 2048, 8, NULL, 0};
 
 // yespower 0.5 only
 void yespower_hash(const char *input, char *output){
-    if (yespower_tls(input, 80, &yespower_0_5_bitzeny, (yespower_binary_t *) output) == 0){
-        return;
-    }
-    abort();
+  if (yespower_tls(input, 80, &yespower_0_5_bitzeny, (yespower_binary_t *) output))
+  abort();
 }
