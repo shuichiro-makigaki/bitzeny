@@ -212,7 +212,6 @@ public:
 
     uint256 GetHash() {
         uint256 result;
-        assert(buf.size() == 80);
         yespower_hash((const char*)buf.data(), (char*)&result);
         return result;
     }
