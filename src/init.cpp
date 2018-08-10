@@ -530,8 +530,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/BitzenyCoreDevelopers/bitzeny>";
-    const std::string URL_WEBSITE = "<http://bitzeny.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/bitzenyPlus/BitZenyPlus>";
+    const std::string URL_WEBSITE = "<https://bitzeny.tech>";
 
     return CopyrightHolders("Copyright (C) %i-%i") + "\n" +
            "\n" +
