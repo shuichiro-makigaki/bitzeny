@@ -81,9 +81,9 @@ Files: src/qt/res/icons/about.png
        src/qt/res/icons/bitcoin.*
        share/pixmaps/bitcoin*
        src/qt/res/src/bitcoin.svg
-Copyright: Bitboy, Jonas Schnelli
-License: public-domain
-Comment: Site: https://bitcointalk.org/?topic=1756.0
+Copyright: glen <https://twitter.com/glen040417>
+License: CC0-1.0
+Comment: Site: https://github.com/bitzenyPlus/symbol_mark
 
 
 License: Expat
@@ -134,5 +134,13 @@ Comment:
  You should have received a copy of the GNU General Public License along
  with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-License: public-domain
- This work is in the public domain.
+License: CC0-1.0
+ To the extent possible under law, the author(s) have dedicated all copyright
+ and related and neighboring rights to this software to the public domain
+ worldwide. This software is distributed without any warranty.
+ .
+ You should have received a copy of the CC0 Public Domain Dedication along with
+ this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+ .
+ On Debian systems, the complete text of the CC0 1.0 Universal license can be
+ found in ‘/usr/share/common-licenses/CC0-1.0’.
